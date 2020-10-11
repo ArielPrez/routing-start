@@ -19,6 +19,7 @@ export class ServersComponent implements OnInit {
   }
 
   onReload(){
+    // This give back an ERROR for now.
     // this.router.navigate(['servers'], {relativeTo: this.route});
   }
 }
