@@ -19,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/:id/:name', component: UserComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id/edit', component: EditServerComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `HomeComponent`
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 ];
