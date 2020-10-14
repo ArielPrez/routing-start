@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     { path: ':id/edit', component: EditServerComponent }
   ]},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `HomeComponent`
-  { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' }  // Wildcard route for a 404 page
 ];
 @NgModule({
   declarations: [
