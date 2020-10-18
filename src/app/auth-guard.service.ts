@@ -15,7 +15,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
     // Protecting Routes with canActivate
     canActivate(route: ActivatedRouteSnapshot,
-                state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+                state: RouterStateSnapshot):
+                Observable<boolean> |
+                Promise<boolean> |
+                boolean {
         return this.authService.isAuthenticated()
             .then(
                 (userAuth: boolean) => {
@@ -30,7 +33,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     }
     // Protecting Child (Nested) Routes with canActivateChild
     canActivateChild(route: ActivatedRouteSnapshot,
-                     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+                     state: RouterStateSnapshot):
+                     Observable<boolean> |
+                     Promise<boolean> |
+                     boolean {
         return this.canActivate(route, state);
     }
 }
