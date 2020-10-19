@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  errorMessage: string;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // This solution works only for a static routes.
+      // this.errorMessage = this.route.snapshot.data.message;
+  // ---------------------------------------------------------
+    // Another way to pass the message for an static route.
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.errorMessage = data.message;
+      }
+    );
   }
 
 

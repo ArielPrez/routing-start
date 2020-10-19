@@ -20,7 +20,7 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] }
     ]},
     { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `HomeComponent`
-    { path: 'not-found', component: PageNotFoundComponent },
+    { path: 'not-found', component: PageNotFoundComponent, data: {message: 'Page not found!'} },
     { path: '**', redirectTo: '/not-found' }  // Wildcard route for a 404 page
   ];
 
