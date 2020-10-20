@@ -28,6 +28,9 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(appRoutes)
+    // Understanding Location Strategies: Old technique for the support in very old browsers,
+    //  and to make sure the web server returns the index.html file, use (usehash) tag in the route.
+      // RouterModule.forRoot(appRoutes,{useHash: true})
     ],
     exports: [
         RouterModule
